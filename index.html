@@ -3,58 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindful Pages Online Shop</title>
+    <title>Mindful Pages</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("T7-W5HNLPTB-fr7Q2");
+        })();
+    </script>
 </head>
 <body>
+    <section id="Landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/MindfulPages.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Shop</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Daily Puzzle</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Welcome to</h1>
+                <h1 class="title title--secondary"><span class="red">Mindful Pages</span></h1>
+                <p class="header__para">
+                    Discover a world of <b class="red">literature at your finger prints.</b> Buy, sell, and trade books with book lovers around the globe. Engage with our community through exciting book trades and our interactive book-themed games!
+                </p>
+            </div>
+        </header>
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fas fa-envelope"></i>
+        </button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about us.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">
+                    The website for book lovers around the world
+                </h4>
+                <p class="modal__para">
+                    We are a small group of programmers <b class="red">dedicated to bringing you the best online experience for all things literature.</b></b>
+                    <br>
+                    <br>
+                    We actively work on difficult problems and love to engage and learn from people who use our site.
+                    <br>
+                    <br>
+                    If you have any questions, recommendations, concerns, or problems, please feel free to contact us and we'll get back to you as soon as we can!
+                </p>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    We're interesed in hearing your thoughts.
+                </h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label" >Name</label>
+                        <input class="input" name="user_name" type="text" ></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" ></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" ></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Submit
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
 
-<header>
-  <h1>MINDFUL PAGES</h1>
-</header>
-
-<nav>
-  <a href="#">HOME</a>
-  <a href="#">TRADE</a>
-  <a href="#">SHOP</a>
-  <a href="#">DAILY PUZZLE</a>
-  <a href="#">CONTACT</a>
-</nav>
-
-<div class="container">
-  <div class="shop-header">
-    <h2>ONLINE SHOP</h2>
-    <p>(description about shop)</p>
-  </div>
-
-  <div class="product-grid">
-    <!-- Repeat this block for each product -->
-    <div class="product">
-      <img src="https://cdn.kobo.com/book-images/a8808e76-9258-4371-a65e-a45e96f5d7ea/353/569/90/False/the-48-laws-of-power-1.jpg" alt="Book Title">
-      <h3>The 48 Laws of Power</h3>
-      <p>$15.99</p>
-      <a href="#" class="add-to-cart">ADD TO CART</a>
-    </div>
-    <!-- ... other products ... -->
-    <div class="product">
-      <img src="https://cdn.kobo.com/book-images/a8808e76-9258-4371-a65e-a45e96f5d7ea/353/569/90/False/the-48-laws-of-power-1.jpg" alt="Book Title">
-      <h3>The 48 Laws of Power</h3>
-      <p>$15.99</p>
-      <a href="#" class="add-to-cart">ADD TO CART</a>
-    </div>
-    <div class="product">
-      <img src="https://cdn.kobo.com/book-images/a8808e76-9258-4371-a65e-a45e96f5d7ea/353/569/90/False/the-48-laws-of-power-1.jpg" alt="Book Title">
-      <h3>The 48 Laws of Power</h3>
-      <p>$15.99</p>
-      <a href="#" class="add-to-cart">ADD TO CART</a>
-    </div>
-    <div class="product">
-      <img src="https://cdn.kobo.com/book-images/a8808e76-9258-4371-a65e-a45e96f5d7ea/353/569/90/False/the-48-laws-of-power-1.jpg" alt="Book Title">
-      <h3>The 48 Laws of Power</h3>
-      <p>$15.99</p>
-      <a href="#" class="add-to-cart">ADD TO CART</a>
-    </div>
-  </div>
-</div>
-
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__logo--img" src="./assets/MindfulPages_inverted.png" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="#" class="footer__social--link 
+                        link__hover-effect 
+                        link__hover-effect--white
+                    ">
+                        Github
+                    </a>
+                    <a href="#" class="footer__social--link 
+                        link__hover-effect 
+                        link__hover-effect--white
+                    " onclick="toggleModal()"> 
+                        Contact
+                </div>
+                <div class="footer__copyright">
+                    Copyright © 2024 Mindful Pages
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
