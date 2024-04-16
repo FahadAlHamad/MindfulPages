@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Mindful Pages</title>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("T7-W5HNLPTB-fr7Q2");
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/MindfulPages.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="index.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Shop</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Daily Puzzle</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="title">Our Book <span class="red">Collection</span></h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="filterBooks()" placeholder="Search for books...">
+        </div>
+    </section>
+    <section class="book-list">
+        <!-- Example books, you should populate this with actual book data -->
+        <div class="book" data-name="Book Title One">
+            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title One">
+            <h3>Book Title One</h3>
+            <p>$15.99</p>
+        </div>
+        <div class="book" data-name="Book Title Two">
+            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title Two">
+            <h3>Book Title Two</h3>
+            <p>$19.99</p>
+        </div>
+        <div class="book" data-name="Book Title Two">
+            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title Two">
+            <h3>Book Title Two</h3>
+            <p>$19.99</p>
+        </div>
+        <div class="book" data-name="Book Title Two">
+            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title Two">
+            <h3>Book Title Two</h3>
+            <p>$19.99</p>
+        </div>
+        
+        <!-- Add more books as needed -->
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__logo--img" src="./assets/MindfulPages_inverted.png" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/FahadAlHamad/MindfulPages" class="footer__social--link 
+                        link__hover-effect 
+                        link__hover-effect--white
+                    ">
+                        Github
+                    </a>
+                    <a href="#" class="footer__social--link 
+                        link__hover-effect 
+                        link__hover-effect--white
+                    " onclick="toggleModal()"> 
+                        Contact
+                </div>
+                <div class="footer__copyright">
+                    Copyright © 2024 Mindful Pages
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="shop.js"></script> <!-- If you choose to add filtering functionality with JavaScript -->
+</body>
+</html>

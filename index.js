@@ -6,6 +6,7 @@ let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
 
+// This function leads to the movement of the shapes in the homepage
 function moveBackground(event){
     const shapes = document.querySelectorAll(".shape");
     const x = event.clientX * scaleFactor;
@@ -17,6 +18,8 @@ function moveBackground(event){
         shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`    }
 }
 
+// Clicking the dark theme button causes this function to run
+// If the current theme is light, it changes the site to a dark them changing the background and text and vice versa.
 function toggleContrast(){
     contrastToggle = !contrastToggle
     if (contrastToggle){
@@ -27,6 +30,8 @@ function toggleContrast(){
     }
 }
 
+// This function is responsible for the contact section of the website
+// It sends an email to us with the user's message from their provided email
 function contact(event){
     event.preventDefault();
 
@@ -51,6 +56,7 @@ function contact(event){
     })    
 }
 
+// This function handles the visibilty of the contact section
 function toggleModal(){
     if (isModalOpen) {
         isModalOpen = false;
