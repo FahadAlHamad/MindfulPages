@@ -19,9 +19,9 @@
     const homeLink = document.querySelector('.nav__link--home'); // Target the Home link by class
 
     if (username) {
-        homeLink.href = mindfulpages.html?username=${encodeURIComponent(username)}; // Update Home link
-    }
-});
+            homeLink.href = `mindfulpages.html?username=${encodeURIComponent(username)}`; // Correctly use template literals
+        }
+    });
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,7 +33,7 @@
             </figure>
             <ul class="nav__link--list">
                 <li class="nav__link">
-                    <a href="index.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
+                    <a href="mindfulpages.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
                 </li>
                 <li class="nav__link">
                     <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Shop</a>
