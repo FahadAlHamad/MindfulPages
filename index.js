@@ -24,13 +24,27 @@ function toggleContrast(){
     contrastToggle = !contrastToggle
     if (contrastToggle){
         document.body.classList += " dark-theme"
+        localStorage.setItem('theme', 'dark'); // Save state to local storage
     }
     else{
         document.body.classList.remove("dark-theme")
+        localStorage.setItem('theme', 'light'); // Save state to local storage
     }
 }
 
-// This function is responsible for the contact section of the website
+document.addEventListener('DOMContentLoaded', function () {
+    var currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        document.body.classList.add("dark-theme");
+        contrastToggle = true; // Ensure your toggle state variable matches
+    } else {
+        document.body.classList.remove("dark-theme");
+        contrastToggle = false; // Ensure your toggle state variable matches
+    }
+});
+
+
+// This function is responsible for the contact popup of the website
 // It sends an email to us with the user's message from their provided email
 function contact(event){
     event.preventDefault();
@@ -56,7 +70,7 @@ function contact(event){
     })    
 }
 
-// This function handles the visibilty of the contact section
+// This function handles the visibilty of the contact popup
 function toggleModal(){
     if (isModalOpen) {
         isModalOpen = false;

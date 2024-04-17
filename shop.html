@@ -13,6 +13,15 @@
         (function(){
             emailjs.init("T7-W5HNLPTB-fr7Q2");
         })();
+        document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    const homeLink = document.querySelector('.nav__link--home'); // Target the Home link by class
+
+    if (username) {
+        homeLink.href = mindfulpages.html?username=${encodeURIComponent(username)}; // Update Home link
+    }
+});
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -38,37 +47,67 @@
                 <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i class="fas fa-adjust"></i></a>
                 </li>
+                <li class="nav__link">
+                    <a href="https://student.csc.liv.ac.uk/~psqashka/login.php" class="navlink--anchor link__hover-effect link__hover-effect--black">Sign Up/Login</a>
+                </li>
             </ul>
         </nav>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about us.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">
+                    The website for book lovers around the world
+                </h4>
+                <p class="modal__para">
+                    We are a small group of programmers <b class="red">dedicated to bringing you the best online experience for all things literature.</b></b>
+                    <br>
+                    <br>
+                    We actively work on difficult problems and love to engage and learn from people who use our site.
+                    <br>
+                    <br>
+                    If you have any questions, recommendations, concerns, or problems, please feel free to contact us and we'll get back to you as soon as we can!
+                </p>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    We're interesed in hearing your thoughts.
+                </h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label" >Name</label>
+                        <input class="input" name="user_name" type="text" ></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" ></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" ></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Submit
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
         <h1 class="title">Our Book <span class="red">Collection</span></h1>
         <div class="search-bar">
             <input type="text" id="searchInput" onkeyup="filterBooks()" placeholder="Search for books...">
         </div>
-    </section>
-    <section class="book-list">
-        <!-- Example books, you should populate this with actual book data -->
-        <div class="book" data-name="Book Title One">
-            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title One">
-            <h3>Book Title One</h3>
-            <p>$15.99</p>
+        <div class="book-list">
+            <!-- Book results will be displayed here -->
         </div>
-        <div class="book" data-name="Book Title Two">
-            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title Two">
-            <h3>Book Title Two</h3>
-            <p>$19.99</p>
-        </div>
-        <div class="book" data-name="Book Title Two">
-            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title Two">
-            <h3>Book Title Two</h3>
-            <p>$19.99</p>
-        </div>
-        <div class="book" data-name="Book Title Two">
-            <img src="https://www.whsmith.co.uk/mobify/caching/assets/product-image/extra-large/9781529919660.jpg" alt="Book Title Two">
-            <h3>Book Title Two</h3>
-            <p>$19.99</p>
-        </div>
-        
-        <!-- Add more books as needed -->
     </section>
     <footer>
         <div class="container">
