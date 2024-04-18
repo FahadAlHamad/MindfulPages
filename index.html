@@ -38,6 +38,7 @@
 </head>
 <body>
     <section id="Landing-page" onmousemove="moveBackground(event)">
+        <!-- Navigation bar with links and a sign-up/login section -->
         <nav>
             <figure>
                 <img id="personal-logo" src="./assets/MindfulPages.png" alt="">
@@ -50,7 +51,7 @@
                     <a href="shop.html" id="shopLink" class="nav__link--anchor link__hover-effect link__hover-effect--black">Shop</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Daily Puzzle</a>
+                    <a href="trivia.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Daily Puzzle</a>
                 </li>
                 <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
@@ -63,15 +64,7 @@
                 </li>
             </ul>
         </nav>
-        <!--<header class="header">
-            <div class="header__content">
-                <h1 class="title">Welcome to</h1>
-                <h1 class="title title--secondary"><span class="red">Mindful Pages</span></h1>
-                <p class="header__para">
-                    Discover a world of <b class="red">literature at your finger prints.</b> Buy, sell, and trade books with book lovers around the globe. Engage with our community through exciting book trades and our interactive book-themed games!
-                </p>
-            </div>
-        </header>-->
+        <!-- Main landing page content with dynamic user greeting and site information -->
         <header class="header">
             <div class="header__content">
                 <!-- Partially dynamic welcome message directly integrated into the header -->
@@ -88,6 +81,7 @@
         <a href="#projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
+        <!-- Modal pop-up for 'About Us' and 'Contact' sections -->
         <div class="modal">
             <div class="modal__half modal__about">
                 <h3 class="modal__title modal__title--about">Here's a bit about us.</h3>
@@ -137,11 +131,11 @@
                 </div>
             </div>
         </div>
+        <!-- Decorative shapes that interact with mouse movement -->
         <img src="./assets/semi circle.svg" class="shape shape--0">
         <img src="./assets/circle.svg" class="shape shape--1">
         <img src="./assets/squiggly.svg" class="shape shape--2">
         <img src="./assets/circle.svg" class="shape shape--3">
-
         <img src="./assets/circle.svg" class="shape shape--5">
         <img src="./assets/squiggly.svg" class="shape shape--6">
         <img src="./assets/circle.svg" class="shape shape--7">
