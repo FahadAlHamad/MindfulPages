@@ -14,14 +14,14 @@
             emailjs.init("T7-W5HNLPTB-fr7Q2");
         })();
         document.addEventListener("DOMContentLoaded", function() {
-    const params = new URLSearchParams(window.location.search);
-    const username = params.get('username');
-    const homeLink = document.querySelector('.nav__link--home'); // Target the Home link by class
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get('username');
+        const homeLink = document.querySelector('.nav__link--home'); // Target the Home link by class
 
-    if (username) {
-            homeLink.href = `?username=${encodeURIComponent(username)}`; // Correctly use template literals
-        }
-    });
+        if (username) {
+                homeLink.href = `?username=${encodeURIComponent(username)}`; // Correctly use template literals
+            }
+        });
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -107,12 +107,12 @@
         <!-- Content area for search bar -->
         <div class="search-bar">
             <input type="text" id="searchInput" onkeyup="filterBooks()" placeholder="Search for books...">
+            <button id="searchButton">Search!</button>
         </div>
         <div class="book-list">
             <!-- Book results will be displayed here -->
         </div>
     </section>
-    <!-- Footer with social links and copyright information -->
     <footer>
         <div class="container">
             <div class="row footer__row">
@@ -133,7 +133,7 @@
                         Contact
                 </div>
                 <div class="footer__copyright">
-                    Copyright © 2024 Mindful Pages
+                    Copyright Â© 2024 Mindful Pages
                 </div>
             </div>
         </div>

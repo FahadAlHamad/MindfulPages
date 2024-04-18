@@ -20,9 +20,6 @@ function displayBooks(books) {
         var title = book.volumeInfo.title || 'Unknown Title';
         var authors = book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Unknown Author';
         var thumbnail = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'https://via.placeholder.com/150';
-        var saleInfo = book.saleInfo;
-        var amazonLink = '';
-        var saleLinks = '';
         var isbn13 = ''; // Variable to store ISBN_13
 
         if (book.volumeInfo.industryIdentifiers) {
@@ -33,30 +30,18 @@ function displayBooks(books) {
             }
         }
 
-        // Add link to Amazon with ISBN as search query
-        amazonLink = `<a href="https://www.amazon.com/s?k=${isbn13}" target="_blank">Search on Amazon</a>`;
+        var bookDetailsURL = `book_details.html?title=${encodeURIComponent(title)}&authors=${encodeURIComponent(authors)}&isbn=${encodeURIComponent(isbn13)}&thumbnail=${encodeURIComponent(thumbnail)}`;
 
-        if (saleInfo && saleInfo.saleability === 'FOR_SALE') {
-            saleLinks = '<p>Available for purchase at: </p>';
-            if (saleInfo.buyLink) {
-                saleLinks += `<a href="${saleInfo.buyLink}" target="_blank">Buy on Google Books</a><br>`;
-            }
-            if (saleInfo.retailPrice && saleInfo.retailPrice.amount) {
-                saleLinks += `<p>Price: ${saleInfo.retailPrice.amount} ${saleInfo.retailPrice.currencyCode}</p>`;
-            }
-        } else if (saleInfo && saleInfo.saleability === 'FREE') {
-            saleLinks = '<p>Available for free on Google Books</p>';
-        }
-
-        // Construct HTML for the book with ISBN displayed
+        // Construct HTML for the book with minimal details.
         var bookHTML = `
             <div class="book">
-                <img src="${thumbnail}" alt="${title}">
+                <a href="${bookDetailsURL}">
+                    <img src="${thumbnail}" alt="${title}">
+                
                 <div class="book-details">
                     <h3>${title}</h3>
                     <p>By ${authors}</p>
-                    ${saleLinks}
-                    ${amazonLink}
+                </a>
                 </div>
             </div>
         `;
@@ -69,6 +54,9 @@ document.getElementById('searchInput').addEventListener('keyup', function(event)
     if (event.key === 'Enter') {
         searchBooks();
     }
+});
+document.getElementById('searchButton').addEventListener('click', function() {
+    searchBooks();
 });
 
 // Initial search when the page loads

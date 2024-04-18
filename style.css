@@ -645,22 +645,31 @@ header h1{
 }
 
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 20px; 
 }
 
 .book {
-    margin: 10px;
+    display: flex; 
     border: 1px solid #ccc;
-    padding: 10px;
-    width: 200px;
 }
 
 .book img {
-    width: 100%;
-    height: auto;
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+.book-details {
+    flex-grow: 1;
+}
+
+.book-details h3 {
+    margin-top: 0;
+}
+
+.book-details p {
+    margin: 5px 0;
 }
 
 .search-bar {
@@ -676,6 +685,53 @@ header h1{
     border: 1px solid #ccc; 
     color: black; 
 }
+
+/* Book_details page*/
+
+.book-details-container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    max-width: 800px;
+    /*centre the details*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-cover {
+    flex: 0 0 40%; 
+    max-width: 300px; 
+    margin-left: 20px; 
+}
+
+.book-cover img {
+    width: 250px;
+    height: auto;
+}
+
+.book-info {
+    flex: 1;
+}
+
+#bookTitle {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+}
+
+#bookAuthors {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#buyButton {
+    display: block;
+    margin-top: 10px; 
+}
+
+/* Dark theme in shop */
 
 body.dark-theme {
     background-color: #121212; 

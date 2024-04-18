@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <title>Book Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/MindfulPages.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="index.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
+                </li>
+                <li class="nav__link">
+                    <a href="shop.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Shop</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Daily Puzzle</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black"><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <header>
+        <h1>Book Details</h1>
+    </header>
+    
+    <main>
+        <div class="book-details-container">
+            <div class="book-cover">
+                <img src="" alt="Book Cover" id="bookCover" class="book-cover-enlarged">
+            </div>
+            <div class="book-info">
+                <h2 id="bookTitle"></h2>
+                <p id="bookAuthors"></p>
+                <p id="bookDescription"></p>
+                <button id="buyButton">Buy Book</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__logo--img" src="./assets/MindfulPages_inverted.png" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/FahadAlHamad/MindfulPages" class="footer__social--link 
+                        link__hover-effect 
+                        link__hover-effect--white
+                    ">
+                        Github
+                    </a>
+                    <a href="#" class="footer__social--link 
+                        link__hover-effect 
+                        link__hover-effect--white
+                    " onclick="toggleModal()"> 
+                        Contact
+                </div>
+                <div class="footer__copyright">
+                    Copyright Â© 2024 Mindful Pages
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="book_details.js"></script>
+</body>
+</html>
